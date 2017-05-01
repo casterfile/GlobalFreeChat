@@ -38,3 +38,9 @@ angular.module('starter', ['ionic'])
 
    $urlRouterProvider.otherwise('/login');
 })
+
+.controller('LoginController', function($scope){
+  $scope.join = function(nickname){
+    alert(nickname);
+  }
+})
