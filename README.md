@@ -9,7 +9,7 @@ This application is free of virus or malware </br>
 
 <h3>Software Requirment </h3>
 nodejs<br/>
-npm install -g ionic@1.4.0<br/>
+ionic v1<br/>
 cloud 9<br/>
 Angular<br/>
 
