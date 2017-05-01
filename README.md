@@ -32,6 +32,7 @@ Github: https://goo.gl/jPHFPe </br>
 Run </br>
 $ nmp install</br>
 $ ionic serve</br>
+$ ionic serve --l</br>
 then got to URL: http://localhost:8100/ionic-lab
 
 add plotform</br>
