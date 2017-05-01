@@ -32,7 +32,7 @@ angular.module('starter', ['ionic'])
    })
 
    .state('chat',{
-    url: '/chat',
+    url: '/chat/:nickname',
     templateUrl: 'templates/chat.html'
    });
 
@@ -42,12 +42,12 @@ angular.module('starter', ['ionic'])
 .controller('LoginController', function($scope, $state){
   $scope.join = function(nickname){
     if(nickname){
-      $state.go('chat');
+      $state.go('chat', {nickname:nickname});
     }
   }
 })
 
 
-.controller('ChatController', function($scope){
-
+.controller('ChatController', function($scope,$stateParams){
+  $scope.nickname = $stateParams.nickname;
 })
