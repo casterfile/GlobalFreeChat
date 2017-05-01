@@ -59,3 +59,8 @@ $ ionic g page myPage</br>
 Note</br>
 Creating ionic version 1</br>
 $ ionic start Projectname blank --v1</br>
+
+
+Fallow up
+04 Getting Started with Socket.io
+2
