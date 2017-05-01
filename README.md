@@ -48,9 +48,9 @@ $ ionic run android
 
 Publishing your app to AppStore or Google play you need to use Xcode or Android studio. i know there is a command for that. but i like to use the editor to build and submit to the online store.</br>
 
-Ionic Creating a page
-$ ionic g page myPage
+Ionic Creating a page</br>
+$ ionic g page myPage</br>
 
 Note</br>
-Creating ionic version 1
+Creating ionic version 1</br>
 $ ionic start Projectname blank --v1</br>
