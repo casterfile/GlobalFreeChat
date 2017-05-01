@@ -11,7 +11,11 @@ This application is free of virus or malware </br>
 nodejs<br/>
 ionic v1<br/>
 cloud 9<br/>
-Angular<br/>
+angular<br/>
+bower<br/>
+
+install</br>
+bower install angular-socket-io</br>
 
 
 <h3>Online Application</h3>
