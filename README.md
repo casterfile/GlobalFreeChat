@@ -68,3 +68,9 @@ $ ionic start Projectname blank --v1</br>
 platforms\android\cordova\lib\builders\GradleBuilder.js </br>
 Change argument -Xmx20484m to 1024 or 512 at line:args.push('-Dorg.gradle.jvmargs=-Xmx1024m'); in your project file </br>
 
+//Git undo where [revision] is the commit hash (for example: 12345678901234567890123456789012345678ab)</br>
+$ git checkout [revision] .</br>
+
+//Or Undo this by</br>
+$ git reset --hard; </br>
+
