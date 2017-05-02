@@ -68,7 +68,7 @@ angular.module('starter', ['ionic','btford.socket-io'])//, 'btford.socket-io'
   Socket.on("connect", function(){
     $scope.socketId = this.id;
     var data = {
-      message: "User has joined!", 
+      message: $scope.nickname + " has joined!", 
       sender: $scope.nickname, 
       socketId: $scope.socketId, 
       isLog:true
