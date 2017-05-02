@@ -69,10 +69,21 @@ angular.module('starter', ['ionic','btford.socket-io'])//, 'btford.socket-io'
 
   Socket.on("connect", function(){
     Socket.emit("Message", data);
+    $scope.socketId = this.id;
   });
 
   Socket.on("Message", function(data){
     $scope.messages.push(data);
   })
+
+  $scope.sendMessage = function(){
+    var newMessage = {sender: '',message:'', socketId:''};
+    newMessage.sender=$scope.nickname;
+    newMessage.message= $scope.message;
+    newMessage.socketId = $scope.socketId;
+
+    Socket.emit("Message", newMessage);
+
+  }
 
 })

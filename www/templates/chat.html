@@ -3,12 +3,12 @@
 		<div class="title">Chatting as {{nickname}}</div>
 	</ion-header-bar>
 	<div class="bar bar-subheader">
-		<p class="title">{{message}}</p>
+		<p class="title">{{status_message}}</p>
 	</div>
 
 	<ion-content class= "has-subheader">
 		<ion-list class="list">
-			<li ng-repeat="msg in messages" class="item item-avatar-left">
+			<li ng-repeat="msg in messages" ng-class="{'item item-avatar-right item-text-wrap nopadding' : socketId == msg.socketId,'item item-avatar-left item-text-wrap nopadding' : socketId != msg.socketId}">
 				<img src="http://www.smartcallcentersolutions.com/images/profile_icon.png" />
 				{{msg.sender}}: {{msg.message}}
 			</li>
@@ -20,6 +20,6 @@
 			<i class="icon ion-android-chat placeholder-icon"></i>
 			<input type="text" placeholder="Enter your message...." ng-model="message" />
 		</label>
-		<button class="button button-dark button-clear ion-android-send icon" ng-clear="sendMessage()"></button>
+		<button class="button button-dark button-clear ion-android-send icon" ng-click="sendMessage()"></button>
 	</div>
 </ion-view>
