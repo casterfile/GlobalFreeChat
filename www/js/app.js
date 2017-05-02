@@ -61,15 +61,18 @@ angular.module('starter', ['ionic','btford.socket-io'])//, 'btford.socket-io'
 
 
 .controller('ChatController', function($scope,$stateParams, Socket){
-  var data = {message: "Hello, Server"};
+  
+  $scope.messages=[];
+  $scope.nickname = $stateParams.nickname;
+
+  var data = {message: "User has joined!", sender: $scope.nickname};
 
   Socket.on("connect", function(){
     Socket.emit("Message", data);
   });
 
   Socket.on("Message", function(data){
-    alert(data.message);
+    $scope.messages.push(data);
   })
 
-  $scope.nickname = $stateParams.nickname;
 })
