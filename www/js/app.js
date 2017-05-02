@@ -65,11 +65,17 @@ angular.module('starter', ['ionic','btford.socket-io'])//, 'btford.socket-io'
   $scope.messages=[];
   $scope.nickname = $stateParams.nickname;
 
-  var data = {message: "User has joined!", sender: $scope.nickname};
-
   Socket.on("connect", function(){
-    Socket.emit("Message", data);
     $scope.socketId = this.id;
+    var data = {
+      message: "User has joined!", 
+      sender: $scope.nickname, 
+      socketId: $scope.socketId, 
+      isLog:true
+    };
+    
+    Socket.emit("Message", data);
+    
   });
 
   Socket.on("Message", function(data){
@@ -77,10 +83,11 @@ angular.module('starter', ['ionic','btford.socket-io'])//, 'btford.socket-io'
   })
 
   $scope.sendMessage = function(){
-    var newMessage = {sender: '',message:'', socketId:''};
+    var newMessage = {sender: '',message:'', socketId:'', isLog:false};
     newMessage.sender=$scope.nickname;
     newMessage.message= $scope.message;
     newMessage.socketId = $scope.socketId;
+    newMessage.isLog = false;
 
     Socket.emit("Message", newMessage);
 

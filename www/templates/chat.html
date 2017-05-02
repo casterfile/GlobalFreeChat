@@ -8,9 +8,9 @@
 
 	<ion-content class= "has-subheader">
 		<ion-list class="list">
-			<li ng-repeat="msg in messages" ng-class="{'item item-avatar-right item-text-wrap nopadding' : socketId == msg.socketId,'item item-avatar-left item-text-wrap nopadding' : socketId != msg.socketId}">
-				<img src="http://www.smartcallcentersolutions.com/images/profile_icon.png" />
-				{{msg.sender}}: {{msg.message}}
+			<li ng-repeat="msg in messages" ng-class="{'item item-avatar-right item-text-wrap nopadding' : (socketId == msg.socketId) && !msg.isLog,'item item-avatar-left item-text-wrap nopadding' : (socketId != msg.socketId) && !msg.isLog, 'item item-divider noPadding noBg': msg.isLog}">
+				<img ng-hide="msg.isLog" src="http://www.smartcallcentersolutions.com/images/profile_icon.png" />
+				<h2 ng-hide="msg.isLog"><b style="">{{msg.sender}}:</b></h2>  {{msg.message}}
 			</li>
 		</ion-list>
 	</ion-content>
