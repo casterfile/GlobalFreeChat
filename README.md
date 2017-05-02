@@ -39,9 +39,13 @@ $ ionic serve</br>
 $ ionic serve --l</br>
 then got to URL: http://localhost:8100/ionic-lab
 
-add plotform</br>
+add platform</br>
 $ ionic platform add ios</br>
 $ ionic platform add android</br>
+// new version of android SDK in not compatible with cordova</br>
+// try to run this if the you get error</br>
+$ cordova platform rm android</br>
+$ ionic platform add android@6.2.2</br>
 
 build and test</br>
 Just to make sure the default project worked, try building and running the project (substitute ios for android to build for Android instead):</br>
@@ -49,7 +53,7 @@ $ ionic build ios</br>
 $ ionic emulate ios</br>
 
 Test</br>
-$ ionic run android
+$ ionic run android</br>
 
 Publishing your app to AppStore or Google play you need to use Xcode or Android studio. i know there is a command for that. but i like to use the editor to build and submit to the online store.</br>
 
@@ -59,4 +63,8 @@ $ ionic g page myPage</br>
 Note</br>
 Creating ionic version 1</br>
 $ ionic start Projectname blank --v1</br>
+
+//If you get a JVM Error try to change the configuration of this file</br>
+platforms\android\cordova\lib\builders\GradleBuilder.js </br>
+Change argument -Xmx20484m to 1024 or 512 at line:args.push('-Dorg.gradle.jvmargs=-Xmx1024m'); in your project file </br>
 
