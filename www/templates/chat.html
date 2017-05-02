@@ -22,8 +22,8 @@
 	<div class="bar bar-footer item-input-inset footer-item-input-inset">
 		<label class="item-input-wrapper">
 			<i class="icon ion-android-chat placeholder-icon"></i>
-			<input type="text" placeholder="Enter your message...." ng-model="message" />
+			<input type="text" placeholder="Enter your message...." ng-model="message" ng-enter="sendMessage()" />
 		</label>
-		<button class="button button-dark button-clear ion-android-send icon" ng-click="sendMessage()"></button>
+		<button class="button button-dark button-clear ion-android-send icon" ng-click="sendMessage()" ></button>
 	</div>
 </ion-view>

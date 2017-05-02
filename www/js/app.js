@@ -51,6 +51,19 @@ angular.module('starter', ['ionic','btford.socket-io'])//, 'btford.socket-io'
   return mySocket;
 })
 
+.directive('ngEnter',function(){
+  return function(scope, element, attrs){
+    element.bind("keydown keypress", function(event){
+      if(event.which === 13){
+        scope.$apply(function(){
+          scope.$eval(attrs.ngEnter);
+        });
+        event.preventDefault();
+      }
+    });
+  }
+})
+
 .controller('LoginController', function($scope, $state){
   $scope.join = function(nickname){
     if(nickname){
@@ -90,7 +103,7 @@ angular.module('starter', ['ionic','btford.socket-io'])//, 'btford.socket-io'
     newMessage.isLog = false;
 
     Socket.emit("Message", newMessage);
-
+    $scope.message = '';
   }
 
 })
